@@ -10,5 +10,6 @@ public interface CustUserMapper {
 
     public List<CustUser> getCustUserList();
     public int save(CustUser custUser);
+    public int delete(String userId);
 
 }

@@ -19,4 +19,10 @@
 		)
 	</insert>
 	
+	<insert id="delete" parameterType="String">
+		delete 
+		  from cust_user 
+		 where user_id = #{userId}
+	</insert>
+	
 </mapper>

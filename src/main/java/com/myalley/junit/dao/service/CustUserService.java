@@ -28,14 +28,21 @@ public class CustUserService {
     public int save(CustUser custUser) {
         int insCount = 0;
 
-        custUser = new CustUser();
-        custUser.setUserId("USER1");
-        custUser.setMobileNo("00000000000");
-        custUser.setAddr("SHIHEUNG");
+        if(custUser == null) {
+	        custUser = new CustUser();
+	        custUser.setUserId("USER1");
+	        custUser.setMobileNo("00000000000");
+	        custUser.setAddr("SHIHEUNG");
+        }
 
         insCount += custUserMapper.save(custUser);
 
         return  insCount;
+    }
+    
+    public int delete(String userId) {
+    	int delCount = custUserMapper.delete(userId);
+    	return delCount;
     }
 
 }
